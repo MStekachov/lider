@@ -14,6 +14,7 @@ use Yii;
  * @property string $description
  * @property string $text
  * @property int $subcategory
+ * @property string $img
  */
 class ProductCategory extends \yii\db\ActiveRecord
 {
@@ -35,6 +36,7 @@ class ProductCategory extends \yii\db\ActiveRecord
             [['text'], 'string'],
             [['subcategory'], 'integer'],
             [['name', 'slug', 'title', 'description'], 'string', 'max' => 128],
+            [['img'], 'string', 'max' => 64],
             [['slug'], 'unique'],
         ];
     }
@@ -52,6 +54,7 @@ class ProductCategory extends \yii\db\ActiveRecord
             'description' => 'Description',
             'text' => 'Text',
             'subcategory' => 'Subcategory',
+            'img' => 'Img',
         ];
     }
 }

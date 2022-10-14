@@ -26,6 +26,7 @@ class m221014_065904_create_product_category_table extends Migration
             'description' => $this->string(128),
             'text' => $this->text(),
             'subcategory' => $this->integer(),
+            'img' => $this->string(64),
         ], $tableOptions);
     }
 
