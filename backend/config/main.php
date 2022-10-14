@@ -7,15 +7,20 @@ $params = array_merge(
 );
 
 return [
-    'id' => 'app-backend',
+    'id' => 'lider-adminpanel',
     'basePath' => dirname(__DIR__),
     'language' => 'ru-RU',
     'controllerNamespace' => 'backend\controllers',
-    'bootstrap' => ['log'],
+    //'bootstrap' => ['log'],
+    'bootstrap' => ['debug'],
     'modules' => [
         'gii' => [
             'class' => 'yii\gii\Module'
         ],
+        'debug' => [
+            'class' => 'yii\debug\Module',
+        ],
+         
     ],
     'components' => [
         'request' => [
@@ -32,7 +37,7 @@ return [
         ],
         'session' => [
             // this is the name of the session cookie used for login on the backend
-            'name' => 'advanced-backend',
+            'name' => 'lider-adminpanel',
         ],
         'log' => [
             'traceLevel' => YII_DEBUG ? 3 : 0,

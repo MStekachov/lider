@@ -7,12 +7,22 @@ $params = array_merge(
 );
 
 return [
-    'id' => 'app-frontend',
+    'id' => 'lider',
     'basePath' => dirname(__DIR__),
-    'bootstrap' => ['log'],
+    //'bootstrap' => ['log'],
+    'bootstrap' => ['debug'],
+    'modules' => [
+        'gii' => [
+            'class' => 'yii\gii\Module'
+        ],
+       'debug' => [
+           'class' => 'yii\debug\Module',
+       ],
+    ],
     'controllerNamespace' => 'frontend\controllers',
     'components' => [
         'request' => [
+            //'baseUrl' => '',
             'csrfParam' => '_csrf-frontend',
         ],
         'user' => [
@@ -36,14 +46,14 @@ return [
         'errorHandler' => [
             'errorAction' => 'site/error',
         ],
-        /*
         'urlManager' => [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
+                '' => 'site/index',                                
+                '<controller:\w+>/<action:\w+>/' => '<controller>/<action>',
             ],
         ],
-        */
     ],
     'params' => $params,
 ];

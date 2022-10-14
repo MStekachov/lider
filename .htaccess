@@ -12,4 +12,11 @@
         RewriteCond %{REQUEST_URI} !^/backend/web/(assets|js|css|js)/
         RewriteCond %{REQUEST_URI} ^/(admin)
         RewriteRule ^.*$ backend/web/index.php [L]
+        RewriteCond %{REQUEST_URI} ^/
+        RewriteRule ^admin/assets/(.*)$ frontend/web/assets/$1 [L]
+        RewriteRule ^admin/css/(.*)$ frontend/web/css/$1 [L]
+        RewriteRule ^admin/js/(.*)$ frontend/web/js/$1 [L]
+        RewriteCond %{REQUEST_URI} !^/frontend/web/(assets|js|css|js)/
+        RewriteCond %{REQUEST_URI} ^/
+        RewriteRule ^.*$ frontend/web/index.php [L]
     </IfModule>
