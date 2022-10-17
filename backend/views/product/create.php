@@ -1,7 +1,7 @@
 <?php
 /* @var $this yii\web\View */
 ?>
-<h1>product/create</h1>
+<h1>Создать товар</h1>
 
 <p>
     You may change the content of this page by modifying
